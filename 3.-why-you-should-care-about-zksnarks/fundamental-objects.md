@@ -26,14 +26,14 @@ Similarly with multiplication, if we had $$3*4=12$$, we have that $$12-5=7$$ and
 
 Groups are relatively simple objects. A group consists of three things: a set, a binary operation, and an identity element. Let's go through each of those and then come back to this definition.
 
-A **set** is any collection, such as $$\{0,1,2\}$$ or $$\{\text{tree},\text{frog}\}$$. We will primarily be interested in sets
+A <mark style="color:purple;">**set**</mark> is any collection, such as $$\{0,1,2\}$$ or $$\{\text{tree},\text{frog}\}$$. We will primarily be interested in sets
 that contain numbers.
 
-A **binary operation** is some operation that takes in two things and outputs a third, for example addition is a binary operation: $$3+4=7$$. We are only interested in addition and multiplication, so if we ever mention a binary operation you can just think of addition or multiplication.
+A <mark style="color:purple;">**binary operation**</mark> is some operation that takes in two things and outputs a third, for example addition is a binary operation: $$3+4=7$$. We are only interested in addition and multiplication, so if we ever mention a binary operation you can just think of addition or multiplication.
 
-An **identity element** is any element (from our set) that, in simple words, makes the operation do nothing. Since we are only interested in addition and multiplication, the identity element of addition is $$0$$; when we add $$0$$ to anything we get back the same number. For example, $$3+0=3$$. Similarly, for multiplication the identity element would be 1.
+An <mark style="color:purple;">**identity element**</mark> is any element (from our set) that, in simple words, makes the operation do nothing. Since we are only interested in addition and multiplication, the identity element of addition is $$0$$; when we add $$0$$ to anything we get back the same number. For example, $$3+0=3$$. Similarly, for multiplication the identity element would be 1.
 
-We can't put any set, binary operation and identity element together to get a group. Groups will require every element in the set to have an **inverse**. What that means is that if addition is our operation, then for every number in the set (call that number $$a$$), there must exist some other number in the set (call it $$b$$) such that $$a+b=0$$. For example, if $$a=2$$ then there must be some $$b$$ such that $$2+b=0$$. The additive inverse is how we get to 0 (the identity element for addition).
+We can't put any set, binary operation and identity element together to get a group. Groups will require every element in the set to have an <mark style="color:purple;">**inverse**</mark>. What that means is that if addition is our operation, then for every number in the set (call that number $$a$$), there must exist some other number in the set (call it $$b$$) such that $$a+b=0$$. For example, if $$a=2$$ then there must be some $$b$$ such that $$2+b=0$$. The additive inverse is how we get to 0 (the identity element for addition).
 
 You may think that $$-2$$ is the number that we must add to $$2$$ to get to $$0$$, but since we are in modular groups, this is not the whole picture. If we are working $$\bmod 5$$, then $$2+3=5=0$$. Thus $$3$$ is the number we add to $$2$$ to get $$0$$ (if we are working $$\bmod 5$$).
 
@@ -45,7 +45,7 @@ And if multiplication is our operation, then we need to get to $$1$$ so for ever
 
 Anim: The multiplicative inverse is how we get to 1 (the identity element for multiplication)
 
-Now for the actual definition: A **group** consists of a set, a binary operation, and an identity element on the binary operation; moreover, every element in the set must have an inverse element that is also in the set.
+Now for the actual definition: A <mark style="color:purple;">**group**</mark> consists of a set, a binary operation, and an identity element on the binary operation; moreover, every element in the set must have an inverse element that is also in the set.
 
 Would the modular set $$\{0,1,2,3,4\}$$ with addition be a group? Well we have a set, a binary operation and an identity element ($$0$$), so we just need to check that every element in the set can be added to another element in the set to get $$0$$. Let’s check:
 
@@ -72,7 +72,7 @@ It will be useful to remember that we are primarily interested in groups whose s
 
 Both fields and groups are used all over cryptography. Fields are similar to groups. In fact, fields are basically two groups smushed together.
 
-A **field** consists of a set, but it has two binary operations (addition and multiplication), and two identity elements (one for each binary operation, $$0$$ and $$1$$ in our case). Every element must have an inverse for both binary operations. The only exception is $$0$$. The element $$0$$ does not need to have a multiplicative inverse because it does not have a multiplicative inverse.
+A <mark style="color:purple;">**field**</mark> consists of a set, but it has two binary operations (addition and multiplication), and two identity elements (one for each binary operation, $$0$$ and $$1$$ in our case). Every element must have an inverse for both binary operations. The only exception is $$0$$. The element $$0$$ does not need to have a multiplicative inverse because it does not have a multiplicative inverse.
 
 In the examples above working with the set $$\{0,1,2,3,4\}$$, we showed that every element had an additive inverse. In the same set, every element except $$0$$ had a multiplicative inverse.
 

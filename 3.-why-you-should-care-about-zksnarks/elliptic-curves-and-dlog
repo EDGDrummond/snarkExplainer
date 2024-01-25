@@ -16,7 +16,7 @@ ECs have a very strange property – if you take any two points on the elliptic 
 
 ### Anim of line intersecting ECs
 
-**Elliptic curve addition** is a process that takes in two points on the curve, draws a line through them to find a third, then returns the reflection of the third point about the x-axis.
+<mark style="color:purple;">**Elliptic curve addition**</mark> is a process that takes in two points on the curve, draws a line through them to find a third, then returns the reflection of the third point about the x-axis.
 
 Elliptic curve addition will take in two curve points and draw a line through them to find the third point, but it won't return that third point. You probably noticed that the EC drawings above were symmetric about the x-axis, and that is actually true for all ECs (since the formula looks for $$y^2$$, not $$y$$), so the operation instead returns the reflection of the third point across the x-axis, which we know is on the curve.
 
@@ -58,7 +58,7 @@ If we choose our elliptic curve equation correctly, along with the size of our f
 
 With EC introduced, we can move onto one of the most important ideas in all of cryptography, the Discrete Logarithm (DLOG) problem. This is an example of a one way function: it is very easy to go in one direction, but essentially impossible to go in the other direction. It’s hard to solve yet easy to verify.
 
-When we have an EC point $$G$$, and we are given some other EC point $$P=nG$$ (so $$P$$ is just $$G$$ added to itself $$n$$ times), we refer to the problem of identifying $$n$$ as the discrete logarithm problem (DLOG).
+When we have an EC point $$G$$, and we are given some other EC point $$P=nG$$ (so $$P$$ is just $$G$$ added to itself $$n$$ times), we refer to the problem of identifying $$n$$ as the <mark style="color:purple;">**discrete logarithm problem**</mark> (<mark style="color:purple;">**DLOG**</mark>).
 
 Of primary importance is an assumption that this problem is hard. Really hard. So hard in fact that there is no way to solve the problem, except via brute force methods. Thus if we ensure that we work with large enough values, it is safe to assume that nobody can ever work out what $$n$$ is for a given $$P4 since it would take the world’s best supercomputers millions of years to solve.
 

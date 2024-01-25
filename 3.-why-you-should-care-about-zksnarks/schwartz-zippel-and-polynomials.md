@@ -19,13 +19,13 @@ Let's say our field is $$\mathbb{F}_{11}$$, then $$f(x)=3x^2-8x+4$$ would be a r
 
 In terms of notation, we usually use $$\mathbb{F}_{11}[X]$$ to indicate the polynomials that we are interested in. $$\mathbb{F}_{11}$$ indicates that we want the coefficients to be in $$\mathbb{F}_{11}$$, whilst $$[X]$$ the says that this will be a polynomial with $$x$$ as a variable. The polynomials can have powers of $$x$$ that are arbitrarily high, there is no limit on that.
 
-We refer to the highest power of $$x$$ in a polynomial as the **degree** of the polynomial. For example the degree of $$f(x)=3x^7+5^2+2$$ is $$7$$. The degree will play an important part in the Schwartz-Zippel lemma.
+We refer to the highest power of $$x$$ in a polynomial as the <mark style="color:purple;">**degree**</mark> of the polynomial. For example the degree of $$f(x)=3x^7+5^2+2$$ is $$7$$. The degree will play an important part in the Schwartz-Zippel lemma.
 
 As will almost always be the case in cryptography, we are primarily interested in evaluating it on values from a field or a group. For example we might choose to evaluate these polynomials only at values within $$\mathbb{F}_q$$ where $$q$$ is some huge prime.
 
 ## Schwartz-Zippel Lemma
 
-The **Schwartz-Zippel lemma** essentially tells us that if we have two polynomials that have the same degree (the highest power term), for example $$f(x)=3x^7+5x^2+2$$, and some $$g(x)$$ whose highest power is 7 (so its degree is also 7), then if we evaluate them at some randomly chosen point, let's say $$a\in\mathbb{F}_q$$ (the $$\in$$ notation simply means the thing on the left is some element from the set on the right), and they have the same evaluation, so $$f(a)=b$$ and $$g(a)=b$$, then it is safe to assume that the polynomials are actually the same, i.e. that $$f(x)=g(x)$$.
+The <mark style="color:purple;">**Schwartz-Zippel lemma**</mark> essentially tells us that if we have two polynomials that have the same degree (the highest power term), for example $$f(x)=3x^7+5x^2+2$$, and some $$g(x)$$ whose highest power is 7 (so its degree is also 7), then if we evaluate them at some randomly chosen point, let's say $$a\in\mathbb{F}_q$$ (the $$\in$$ notation simply means the thing on the left is some element from the set on the right), and they have the same evaluation, so $$f(a)=b$$ and $$g(a)=b$$, then it is safe to assume that the polynomials are actually the same, i.e. that $$f(x)=g(x)$$.
 
 But why is it safe to assume they are the same polynomial if they have the same evaluation? There are two primary things we need to think about.
 

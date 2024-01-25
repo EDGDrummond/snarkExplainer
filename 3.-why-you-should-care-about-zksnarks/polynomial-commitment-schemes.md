@@ -1,6 +1,6 @@
 # Polynomial Commitment Schemes
 
-And now we arrive at a more complex object, one that is used all over cryptography due to its usefulness, an elliptic curve group. An **elliptic curve group** consists of all the points that satisfy some elliptic curve equation within some specified finite field.
+And now we arrive at a more complex object, one that is used all over cryptography due to its usefulness, an elliptic curve group. An <mark style="color:purple;">**elliptic curve group**</mark> consists of all the points that satisfy some elliptic curve equation within some specified finite field.
 
 That’s right, we can make a group using elliptic curves, but they look different to the groups we looked at before because, rather than normal numbers, our set consists of points on an elliptic curve. The binary operation is not multiplication or normal addition, but instead the elliptic curve addition we explored earlier. And the identity element is not 0, but the point at infinity that we refer to as $$O$$.
 
@@ -16,7 +16,7 @@ You may notice that the evaluation of the above 2 look identical, except that th
 
 A point of unknown order is $$T$$ where $$T=nG$$ (so the EC point $$G$$ added to itself $$n$$ times) and nobody knows what $$n$$ is. And thanks to the DLOG assumption, nobody can work it out.
 
-How do we get such a point? We use something called a **trusted setup**, but that takes some more time to explain, so for now, just imagine that somebody you really trust gave it to you, for example David Attenborough. He went on his computer, made $$T$$, and then deleted $$n$$ from memory, so he can’t even recover it.
+How do we get such a point? We use something called a<mark style="color:purple;"> **trusted setup**</mark>, but that takes some more time to explain, so for now, just imagine that somebody you really trust gave it to you, for example David Attenborough. He went on his computer, made $$T$$, and then deleted $$n$$ from memory, so he can’t even recover it.
 
 Not only did he make $$T$$, he also made $$T^2=n^2G$$, as well as $$T^3=n^3G$$, and many more of these, up to $$T^{10^{10}}=n^{10^{10}}G$$.
 
@@ -36,12 +36,12 @@ Once you commit to a polynomial you cannot change it since the commitment can be
 
 And finally, the Schwartz-Zippel lemma tells us that the chance of guessing the correct $$P$$ is absolutely miniscule. Our polynomials have degree $$d$$ and evaluate to a point in $$\mathbb{F}_p$$ where $$p$$ is absolutely huge. Thus any polynomial we make can evaluate to $$P$$ at at most $$d$$ points. If we want to change our polynomial $$f(x)$$, we have to make sure that the new polynomial $$g(x)$$ evaluates to $$P$$ at $$n$$. But we don’t know what $$n$$ is, so we just have to randomly guess. And since $$d$$ is so small compared to $$p$$, the chances of us guessing correctly are essentially impossible.
 
-To summarize, a **Polynomial Commitment Scheme** (**PCS**) is a process that involves:
+To summarize, a <mark style="color:purple;">**Polynomial Commitment Scheme**</mark> (<mark style="color:purple;">**PCS**</mark>) is a process that involves:
 
-1. Creating a **point of unknown order** such as $$T=nG$$ where $$G$$ and $$T$$ are known but $$n$$ isn’t ($$n$$ is kept hidden thanks to the DLOG assumption) via a process known as a **trusted setup ceremony** (David Attenborough in our example). Actually we need the powers of this point too, so $$T^2$$, $$T^3$$, up to some number $$T^m$$
+1. Creating a <mark style="color:purple;">**point of unknown order**</mark> such as $$T=nG$$ where $$G$$ and $$T$$ are known but $$n$$ isn’t ($$n$$ is kept hidden thanks to the DLOG assumption) via a process known as a <mark style="color:purple;">**trusted setup ceremony**</mark> (David Attenborough in our example). Actually we need the powers of this point too, so $$T^2$$, $$T^3$$, up to some number $$T^m$$
 2. Choosing a polynomial, any we wish
-3. **Committing** to that polynomial by evaluating it at the point of unknown order
-4. **Opening** that commitment by revealing our polynomial
+3. <mark style="color:purple;">**Committing**</mark> to that polynomial by evaluating it at the point of unknown order
+4. <mark style="color:purple;">**Opening**</mark> that commitment by revealing our polynomial
 5. Being unable to change our polynomial that we committed because of the Schwartz-Zippel lemma
 
 We only need to do the trusted setup ceremony once, and then we can reuse the result from it again and again every time we want to use the PCS.
