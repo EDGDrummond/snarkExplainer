@@ -1,4 +1,4 @@
-# Section 3: Fundamental Objects
+# Fundamental Objects
 
 In this subsection we will introduce these mathematical objects: groups and fields. These are the most fundamental mathematical building blocks used in zkSNARKs. In cryptography, we work mainly with values from a field or a group. By constraining the numbers and types of numbers to those in groups and fields, we are able to derive many interesting tools and properties like verifiable computation and security guarantees.
 
@@ -10,24 +10,23 @@ Modular arithmetic is where we take positive, whole numbers and put an upper lim
 
 For example if we make 5 the upper limit, then 5 will be akin to 0. If we were to count with this arithmetic, starting at 0, it would go 0, 1, 2, 3, 4, 0, 1, ...
 
-### Anim
+<figure><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXFqenp5ZzZza28wbnBwM3RsY2djcnU3M3MwenNqd21zeTd4eG95YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mfZvZSDs5KgCFdVaUR/giphy.gif" alt=""><figcaption></figcaption></figure>
 
 So what happens if we do addition here? We will have to 'loop back' to get numbers between $$0$$ and $$4$$. For example if we do $$3+4$$ we get $$7$$, but that is not in the range we specified since $$5$$ is the upper bound. What we do here is keep removing $$5$$ until we are in our range. Since $$7-5=2$$ we have that $$3+4=2$$. To be even clearer, we should write $$3+4=7\equiv2\bmod5$$ to also indicate that $$5$$ is the upper limit.
 
-### Anim
+<figure><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm5ueGZrYzBidG01c3Jqd2UybjJsMWZydDZtd3U5MTl2bXBwNWoxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AkM45WfYBPROg5qAlz/giphy.gif" alt=""><figcaption></figcaption></figure>
 
 Also $$2+3=5=0$$. Or more accurately, $$2+3=5\equiv0\bmod5$$, where the new equals sign $$\equiv$$ and $$\bmod$$ name indicate to us that we are doing modular arithmetic.
 
 Similarly with multiplication, if we had $$3*4=12$$, we have that $$12-5=7$$ and $$7-5=2$$, so $$3*4=12\equiv2\bmod5$$.
 
-### Anim
+<figure><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3ZjaDMzNHAybmkxbW5ldDZ1N2x6Nnc2em81YnY3NjdkYWpqNXppeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Y7R89BT4ZD4no9PHmv/giphy.gif" alt=""><figcaption></figcaption></figure>
 
 ## Groups
 
 Groups are relatively simple objects. A group consists of three things: a set, a binary operation, and an identity element. Let's go through each of those and then come back to this definition.
 
-A <mark style="color:purple;">**set**</mark> is any collection, such as $$\{0,1,2\}$$ or $$\{\text{tree},\text{frog}\}$$. We will primarily be interested in sets
-that contain numbers.
+A <mark style="color:purple;">**set**</mark> is any collection, such as $$\{0,1,2\}$$ or $$\{\text{tree},\text{frog}\}$$. We will primarily be interested in sets that contain numbers.
 
 A <mark style="color:purple;">**binary operation**</mark> is some operation that takes in two things and outputs a third, for example addition is a binary operation: $$3+4=7$$. We are only interested in addition and multiplication, so if we ever mention a binary operation you can just think of addition or multiplication.
 
@@ -37,32 +36,29 @@ We can't put any set, binary operation and identity element together to get a gr
 
 You may think that $$-2$$ is the number that we must add to $$2$$ to get to $$0$$, but since we are in modular groups, this is not the whole picture. If we are working $$\bmod 5$$, then $$2+3=5=0$$. Thus $$3$$ is the number we add to $$2$$ to get $$0$$ (if we are working $$\bmod 5$$).
 
-### Anim
+<figure><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGwzZ2pmcnUzNGk2emU2djRneW14dndkcXU0Yjd0NDBqNW93eXRoNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xGd3W4WkRijt0JZQrj/giphy.gif" alt=""><figcaption></figcaption></figure>
 
 And if multiplication is our operation, then we need to get to $$1$$ so for every number $$a$$ in the set there must be another number $$b$$ in the set such that $$a*b=1$$. Let’s go back to our example in $$\bmod 5$$ where $$a=2$$. In this case $$2*3 = 6 \equiv 1 \bmod 5$$, so $$3$$ is the inverse of $$2$$ when multiplying.
 
-### Anim
-
-Anim: The multiplicative inverse is how we get to 1 (the identity element for multiplication)
+<figure><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXE4ejh0c25nNW5lZmpxZzN2YTV3cnJ6cGR4c2R0Y3NoOGExb3RueiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ewvcbBTn6b9A56moBc/giphy.gif" alt=""><figcaption><p>The multiplicative inverse is how we get to 1 (the identity element for multiplication)</p></figcaption></figure>
 
 Now for the actual definition: A <mark style="color:purple;">**group**</mark> consists of a set, a binary operation, and an identity element on the binary operation; moreover, every element in the set must have an inverse element that is also in the set.
 
 Would the modular set $$\{0,1,2,3,4\}$$ with addition be a group? Well we have a set, a binary operation and an identity element ($$0$$), so we just need to check that every element in the set can be added to another element in the set to get $$0$$. Let’s check:
 
-- $$1+4=5\equiv 0\bmod 5$$ (so that is true for $$1$$ and $$4$$)
-- $$2+3=5\equiv 0\bmod 5$$ (so that is true for $$2$$ and $$3$$).
+* $$1+4=5\equiv 0\bmod 5$$ (so that is true for $$1$$ and $$4$$)
+* $$2+3=5\equiv 0\bmod 5$$ (so that is true for $$2$$ and $$3$$).
 
 Great, we have a group!
 
 What about the same set but with multiplication where 1 is the identity element? Well let’s check:
 
-- $$2*3=6 \equiv 1\bmod 5$$ (so that solves $$2$$ and $$3$$)
-- $$4*4=16 \equiv 1\bmod 5$$ (that solves $$4$$, it is its own inverse)
+* $$2*3=6 \equiv 1\bmod 5$$ (so that solves $$2$$ and $$3$$)
+* $$4*4=16 \equiv 1\bmod 5$$ (that solves $$4$$, it is its own inverse)
 
 That just leaves us to find a multiplicative inverse for $$0$$, some element that when multiplied by $$0$$ returns $$1$$. But we learnt at school that anything multiplied by $$0$$ gives us back $$0$$. So $$0$$ definitely does not have an inverse; hence it is not a group.
 
-However, if we remove $$0$$ from the set, then all the remaining elements have an inverse,
-meaning that we have a group!
+However, if we remove $$0$$ from the set, then all the remaining elements have an inverse, meaning that we have a group!
 
 We can write groups like so $$(\{0,1,2,3,4\}, +, 0)$$, where the numbers in the curly brackets are the set, the $$+$$ is the binary operation, and $$0$$ is the identity element. Our second example was $$(\{1,2,3,4\}, *, 1)$$.
 
