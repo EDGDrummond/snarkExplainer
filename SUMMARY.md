@@ -17,7 +17,7 @@
   - [Recap](2.-zksnarks-in-action/recap.md)
 - [3. Why you should care about zkSNARKs](3.-why-you-should-care-about-zksnarks/README.md)
   - [Fundamental Objects](3.-why-you-should-care-about-zksnarks/fundamental-objects.md)
-  - [Schwartz-Zippel Lemma and Polynomials](3.-why-you-should-care-about-zksnarks/schwartz-zippel-lemma-and-polynomials.md)
+  - [Schwartz-Zippel and Polynomials](3.-why-you-should-care-about-zksnarks/schwartz-zippel-and-polynomials.md)
   - [Elliptic Curves and DLOG](3.-why-you-should-care-about-zksnarks/elliptic-curves-and-dlog.md)
   - [Polynomial Commitment Schemes](3.-why-you-should-care-about-zksnarks/polynomial-commitment-schemes.md)
 - [Congratulations](congratulations.md)
