@@ -12,7 +12,7 @@ For example if we make 5 the upper limit, then 5 will be akin to 0. If we were t
 
 ### Anim
 
-So what happens if we do addition here? We will have to 'loop back' to get numbers between $$0$$ and $$4$$. For example if we do $$3+4$$ we get $$7$$, but that is not in the range we specified since $$5$$ is the upper bound. What we do here is keep removing $$5$$ until we are in our range. Since $$7-5=2$$ we have that $$$$3+4=2$$. To be even clearer, we should write $$3+4=7\equiv2\bmod5$$ to also indicate that $$5$$ is the upper limit.
+So what happens if we do addition here? We will have to 'loop back' to get numbers between $$0$$ and $$4$$. For example if we do $$3+4$$ we get $$7$$, but that is not in the range we specified since $$5$$ is the upper bound. What we do here is keep removing $$5$$ until we are in our range. Since $$7-5=2$$ we have that $$3+4=2$$. To be even clearer, we should write $$3+4=7\equiv2\bmod5$$ to also indicate that $$5$$ is the upper limit.
 
 ### Anim
 
