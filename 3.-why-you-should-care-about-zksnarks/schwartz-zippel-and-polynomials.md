@@ -14,7 +14,7 @@ We often work with certain types of polynomials where there is an additional res
 
 Coefficients are numbers in front of the variables. In $$f(x)=3x^2-8x+4$$ the coefficients are: $$3$$ for $$x^2$$ and $$-8$$ for $$x$$.
 
-Let's say our field is $$\mathbb{F}_{11}$$, then $$f(x)=3x^2-8x+4$$ would be a relevant polynomial, but $$f(x)=3.4x^2-8x+4$$ wouldn't because it contains a fraction.
+Let's say our field is $$\mathbb{F}_{11}$$, then $$f(x)=3x^2-8x+4$$ would be a relevant polynomial (remember that in $$\mathbb{F}_{11}$$ we have that $$8+3=11\equiv0\bmod11$$, and therefore $$-8\equiv3\bmod11$$), but $$f(x)=3.4x^2-8x+4$$ wouldn't because it contains a fraction.
 
 In terms of notation, we usually use $$\mathbb{F}_{11}[X]$$ to indicate the polynomials that we are interested in. $$\mathbb{F}_{11}$$ indicates that we want the coefficients to be in $$\mathbb{F}_{11}$$, whilst $$[X]$$ the says that this will be a polynomial with $$x$$ as a variable. The polynomials can have powers of $$x$$ that are arbitrarily high, there is no limit on that.
 
@@ -44,7 +44,7 @@ If we were to look at $$f(x)=x^2$$, we would have a more bendy curve. But let's 
 
 These examples show that for a degree $$d$$ polynomial, any horizontal line in the graph cannot be crossed by the polynomial’s curve more than $$d$$ times. If $$a$$ is genuinely chosen at random after the polynomials are created, then it is not feasible to engineer $$g$$ to evaluate to the same value as $$f$$ at $$a$$. Since the only way to arrive at the same value is by guessing, all we are left with is probability.
 
-You might think that we can engineer $$g$$ so that its curve is the same as the curve of $$f$$ in most places, but make them differ in a few places.This is not possible - the curves of $$f$$ and $$g$$ can only cross in at most $$d$$ places. If they crossed at more places, then we could look at their difference $$f-g$$. Since $$f$$ and $$g$$ are both degree $$d$$ polynomials, $$f-g$$ will also be of degree $$d$$ (at most). But if $$f$$ and $$g$$ crossed each other more than $$d$$ times, $$f-g$$ will equal $$0$$ more than $$d$$ times, violating the rule we introduced above.
+You might think that we can engineer $$g$$ so that its curve is the same as the curve of $$f$$ in most places, but make them differ in a few places.This is not possible - the curves of $$f$$ and $$g$$ can only cross in at most $$d$$ places. If they crossed at more places, then we could look at their difference $$f-g$$. Since $$f$$ and $$g$$ are both degree $$d$$ polynomials, $$f-g$$ will also be of degree $$d$$. But if $$f$$ and $$g$$ crossed each other more than $$d$$ times, $$f-g$$ will equal $$0$$ more than $$d$$ times, violating the rule we introduced above.
 
 So if $$f$$ and $$g$$ are different polynomials, meaning their curves cross each others in at most $$d$$ places, how likely is it that they evaluate to the same value at $$a$$?
 

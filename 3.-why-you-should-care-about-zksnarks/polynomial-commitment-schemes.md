@@ -30,18 +30,19 @@ And that allows us to _commit_ to polynomials and later reveal them. For example
 
 Now, instead of telling me your guesses, you can commit to your polynomial by determining $$f(T)=37T^2+65T+134=P$$ and send me $$P$$. When I receive $$P$$, I have no way of determining what your polynomial was and therefore what your guesses are. Similarly I can send you my version of $$P$$, call my version $$P’$$, which would be the evaluation of my polynomial at $$T$$.
 
-Now that we have both sent each other our commitments, we can reveal what our guesses were - and we can’t change our guesses because of our commitment! We refer to this process of revealing our polynomials as an _opening_.
+Now that we have both sent each other our commitments, we can reveal what our guesses were. We refer to this process of revealing our polynomials as an _opening_.
 
-Once you commit to a polynomial you cannot change it since the commitment can be used to identify that you are lying. All I would need to do is make the polynomial with your guesses (so this happens after you open your commitment), let's call the polynomial I make from the opening you gave me $$g(x)$$, then evaluate it at $$T$$ and find that $$g(T)$$ does not equal the $$f(T)$$ that you sent me.
+Once you commit to a polynomial you cannot change it since the commitment can be used to identify that you are lying. All I would need to do is make the polynomial with your guesses (so this happens after you open your commitment), let's call the polynomial I make from the opening you gave me $$g(x)$$, then evaluate it at $$T$$ and find that $$g(T)$$ does not equal the $$f(T)$$ commitment value that you sent me.
 
 And finally, the Schwartz-Zippel lemma tells us that the chance of guessing the correct $$P$$ is absolutely miniscule. Our polynomials have degree $$d$$ and evaluate to a point in $$\mathbb{F}_p$$ where $$p$$ is absolutely huge. Thus any polynomial we make can evaluate to $$P$$ at at most $$d$$ points. If we want to change our polynomial $$f(x)$$, we have to make sure that the new polynomial $$g(x)$$ evaluates to $$P$$ at $$n$$. But we don’t know what $$n$$ is, so we just have to randomly guess. And since $$d$$ is so small compared to $$p$$, the chances of us guessing correctly are essentially impossible.
 
 To summarize, a <mark style="color:purple;">**Polynomial Commitment Scheme**</mark> (<mark style="color:purple;">**PCS**</mark>) is a process that involves:
 
-1. Creating a <mark style="color:purple;">**point of unknown order**</mark> such as $$T=nG$$ where $$G$$ and $$T$$ are known but $$n$$ isn’t ($$n$$ is kept hidden thanks to the DLOG assumption) via a process known as a <mark style="color:purple;">**trusted setup ceremony**</mark> (David Attenborough in our example). Actually we need the powers of this point too, so $$T^2$$, $$T^3$$, up to some number $$T^m$$
-2. Choosing a polynomial, any we wish
-3. <mark style="color:purple;">**Committing**</mark> to that polynomial by evaluating it at the point of unknown order
-4. <mark style="color:purple;">**Opening**</mark> that commitment by revealing our polynomial
-5. Being unable to change our polynomial that we committed because of the Schwartz-Zippel lemma
+1. Creating a <mark style="color:purple;">**point of unknown order**</mark> such as $$T=nG$$ where $$G$$ and $$T$$ are known but $$n$$ isn’t ($$n$$ is kept hidden thanks to the DLOG assumption) via a process known as a <mark style="color:purple;">**trusted setup ceremony**</mark> (David Attenborough in our example).
+2. Creating powers of that point of unknown order, $$T^2$$, $$T^3$$, up to $$T^m$$ for some number $$m$$
+3. Choosing a polynomial, any we wish
+4. <mark style="color:purple;">**Committing**</mark> to that polynomial by evaluating it at the point of unknown order
+5. <mark style="color:purple;">**Opening**</mark> that commitment by revealing our polynomial
+6. Revealing a polynomial that is different to the one we committed to is impossible, because if we did then the Schwartz-Zippel lemma tells us that when the verifier checks it, they will see that it does not match the commitment we sent them earlier
 
 We only need to do the trusted setup ceremony once, and then we can reuse the result from it again and again every time we want to use the PCS.

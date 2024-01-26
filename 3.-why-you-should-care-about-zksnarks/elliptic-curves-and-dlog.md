@@ -44,29 +44,27 @@ The resulting image looks very different to what we might expect at first.
 
 Rather than plot all the points that satisfy the equation from the entire number line, we are now plotting all the points that satisfy the equation from the finite field we chose to work in. And since fields have this very different structure, where for example $$2*3=6\equiv 1\bmod 5$$, the curve actually ends up looking very different.
 
-The fact that ECs over finite fields look so strange is part of the reason they are so secure.
-
 Moreover, the elliptic curve addition (which is a binary operation) where we draw lines through the points still works!
 
 #### Animation of EC addition over a finite field
 
 Our set is now made up of all the points that are left on the curve (all the dots in the image above) along with the point at infinity $$O$$. The line drawing method is our binary operation. The point at infinity is our additive identity. We have a group.
 
-If we choose our elliptic curve equation correctly, along with the size of our finite field $$\mathbb{F}_p$$, then $$(\mathbb{F}_p, \text{EC addition}, O)$$ will be a group of prime order, which adds to its security and is phenomenally useful for us!
+If we choose our elliptic curve equation correctly, along with the size of our finite field $$\mathbb{F}_p$$, then $$(\mathbb{F}_p, \text{EC addition}, O)$$ will be a group of prime order, which makes our group more secure.
 
-### Discrete Logarithm Problem (DLOG)
+## Discrete Logarithm Problem (DLOG)
 
 With EC introduced, we can move onto one of the most important ideas in all of cryptography, the Discrete Logarithm (DLOG) problem. This is an example of a one way function: it is very easy to go in one direction, but essentially impossible to go in the other direction. It’s hard to solve yet easy to verify.
 
 When we have an EC point $$G$$, and we are given some other EC point $$P=nG$$ (so $$P$$ is just $$G$$ added to itself $$n$$ times), we refer to the problem of identifying $$n$$ as the <mark style="color:purple;">**discrete logarithm problem**</mark> (<mark style="color:purple;">**DLOG**</mark>).
 
-Of primary importance is an assumption that this problem is hard. Really hard. So hard in fact that there is no way to solve the problem, except via brute force methods. Thus if we ensure that we work with large enough values, it is safe to assume that nobody can ever work out what $$n$$ is for a given \$$P4 since it would take the world’s best supercomputers millions of years to solve.
+Of primary importance is an assumption, called the <mark style="color:purple;">**DLOG assumption**</mark>, that this problem is hard. Really hard. So hard in fact that there is no way to solve the problem, except via brute force methods. And if we ensure that we work with large enough values, it is safe to assume that nobody can ever work out what $$n$$ is for a given \$$P4 since it would take the world’s best supercomputers millions of years to solve.
 
 Interestingly, there is no formal proof that this problem is hard. We assume it is hard because we have been trying for hundreds of years, and nobody has found a way to solve the problem more quickly than brute force.
 
 There is even some possibility that we will never prove that the discrete logarithm problem is hard because mathematics simply might not be capable of producing such a proof. Alternatively, this hardness assumption may be wrong, there might be quicker ways to solve this problem, and online security would be in some serious jeopardy!
 
-### Crypto Wallets & DLOG
+## Crypto Wallets & DLOG
 
 If you are involved in crypto you probably have a wallet, something like metamask. So you probably also know that your wallet has an address, some really long number like $$0x172c4b2378\ldots$$ This address is actually a point on an elliptic curve! What happened is, the creators of Ethereum said let's use an EC called BLS, and let's use $$G$$ as the base point. Then in order for us to make addresses on those wallets, we have to come up with some random number $$sk$$ - and then $$skG=P$$ would be our address.
 
