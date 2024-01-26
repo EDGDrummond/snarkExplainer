@@ -40,17 +40,21 @@ Lastly, we cannot draw our curve in this reduced plane as we did before. Remembe
 
 The resulting image looks very different to what we might expect at first.
 
-#### Anim EC over finite field
+<figure><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm54Z2RzYnRtcXc3MmsxaGUwYm11MG9haDE0MW42dG84OGI3MnFiaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8lQCOKh0UVIeOPndvB/giphy.gif" alt=""><figcaption></figcaption></figure>
 
 Rather than plot all the points that satisfy the equation from the entire number line, we are now plotting all the points that satisfy the equation from the finite field we chose to work in. And since fields have this very different structure, where for example $$2*3=6\equiv 1\bmod 5$$, the curve actually ends up looking very different.
 
 Moreover, the elliptic curve addition (which is a binary operation) where we draw lines through the points still works!
 
-#### Animation of EC addition over a finite field
+<figure><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTd4cnJjdndpMnhzdW9lMDFlY2pqdnUwMWZkbjhzOXp0cWt0cjUydiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7gfWCiWONNyChhlm0n/giphy.gif" alt=""><figcaption></figcaption></figure>
 
-Our set is now made up of all the points that are left on the curve (all the dots in the image above) along with the point at infinity $$O$$. The line drawing method is our binary operation. The point at infinity is our additive identity. We have a group.
+Our set is now made up of all the points that are left on the curve (all the dots in the image above), and one more point. We refer to this set as $$EC(\mathbb{F}_p)$$.  That other point we include is called <mark style="color:purple;">**the point at infinity**</mark> (also referred to as $$O$$), and you can imagine it to be due north of the graph at all times. It allows us to turn our set and this EC addition we showed into a group!
 
-If we choose our elliptic curve equation correctly, along with the size of our finite field $$\mathbb{F}_p$$, then $$(\mathbb{F}_p, \text{EC addition}, O)$$ will be a group of prime order, which makes our group more secure.
+To touch briefly on the point at infinity, imagine drawing a line from due north onto any point. And since every point on the axes has a sibling point that is its reflection in the horizontal line in the middle of our graph, it means that the vertical line will have its third intersection with the curve be the sibling point. Now when we reflect back across the horizontal line in the middle, we will get back to the point we chose. Thus $$O$$ does nothing when we add it to other EC points, just as we said an _identity element_ needed to back when we defined groups.
+
+We refer to this group as an <mark style="color:purple;">**elliptic curve group**</mark>.
+
+If we choose our elliptic curve equation correctly, along with the size of our finite field $$\mathbb{F}_p$$, then $$(EC(\mathbb{F}_p), \text{EC addition}, O)$$ will be a huge group that will be very hard to break. So hard to break that we will be able to use it for secure online communication.
 
 ## Discrete Logarithm Problem (DLOG)
 

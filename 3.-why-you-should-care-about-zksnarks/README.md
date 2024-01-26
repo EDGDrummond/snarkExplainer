@@ -4,8 +4,9 @@ Well done for making it this far and for deciding to join us on this more mathem
 
 We are going to review the mathematical objects and relationships required to understand a popular proof system called [PLONK](https://eprint.iacr.org/2019/953.pdf).
 
-The thinking here is that by going over one proof system at a high level, you will get to both see
-a proof system used across the industry, and also put yourself in a position to more easily understand any other proof system you come across such as Halo2, Groth16, or STARKs as. This is because zkSNARKs are modular; you can more or less swap their components out and get a different proof system with different tradeoffs.
+The thinking here is that by going over one proof system at a high level, you will get to both see a proof system used across the industry, and also put yourself in a position to more easily understand any other proof system you come across such as \[Halo2]\([https://consensys.io/diligence/blog/2023/07/endeavors-into-the-zero-knowledge-halo2-proving-system/](https://consensys.io/diligence/blog/2023/07/endeavors-into-the-zero-knowledge-halo2-proving-system/)), Groth16([https://docs.pantherprotocol.io/docs/cryptographic-primitives/zk-snarks/groth16](https://docs.pantherprotocol.io/docs/cryptographic-primitives/zk-snarks/groth16)), or STARKs([https://crypto.stackexchange.com/questions/56327/what-are-zk-starks](https://crypto.stackexchange.com/questions/56327/what-are-zk-starks)). This is because zkSNARKs are modular; you can more or less swap their components out and get a different proof system with different tradeoffs.
+
+Halo2
 
 A bird's eye view of what we need to do is:
 
