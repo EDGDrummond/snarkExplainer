@@ -2,9 +2,9 @@
 
 - [🪄 SNARK Fundamentals](README.md)
 - [Course outline](course-outline.md)
-- [Part 1. Introduction](1.-introduction/README.md)
-  - [Argument of Knowledge](1.-introduction/argument-of-knowledge.md)
-  - [zkSNARKs in Action](1.-introduction/zksnarks-in-action.md)
+- [Part 1. Introduction](introduction/README.md)
+  - [Argument of Knowledge](introduction/argument-of-knowledge.md)
+  - [zkSNARKs in Action](introduction/zksnarks-in-action.md)
 - [Part 2. Math (to get to PLONK)](3.-why-you-should-care-about-zksnarks/README.md)
   - [Fundamental Objects](3.-why-you-should-care-about-zksnarks/fundamental-objects.md)
   - [Schwartz-Zippel and Polynomials](3.-why-you-should-care-about-zksnarks/schwartz-zippel-and-polynomials.md)
