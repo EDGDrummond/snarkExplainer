@@ -24,7 +24,7 @@ Elliptic curve addition will take in two curve points and draw a line through th
 
 <figure><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWR5cnMxb3h1c3h2a2k2MG9jMzJnd2RuZzY1MjRhcmcwa3VrZGhoOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WW3RAoQJkoizDCVsIl/giphy.gif" alt=""><figcaption></figcaption></figure>
 
-The core idea is if we know some point $$G$$ that is on the curve, and somebody takes that point and adds it to itself $$n$$ times, they will produce $$P=nG$$. Now if we are given this point $$P$$, even though we know $$G$$ and how this new point was created, we cannot figure out what $$n4 is, regardless of the amount of computational power we have. This is where the security of many online cryptographic systems come from. In theory we can brute force work out what$$n\$$ is, but by choosing our parameters in a certain way (i.e. ensuring the groups we work in are large enough), we make it completely infeasible to ever succeed in that brute force attack.
+The core idea is if we know some point $$G$$ that is on the curve, and somebody takes that point and adds it to itself $$n$$ times, they will produce $$P=nG$$. Now if we are given this point $$P$$, even though we know $$G$$ and how this new point was created, we cannot figure out what $$n$$ is, regardless of the amount of computational power we have. This is where the security of many online cryptographic systems come from. In theory we can brute force work out what$$n\$$ is, but by choosing our parameters in a certain way (i.e. ensuring the groups we work in are large enough), we make it completely infeasible to ever succeed in that brute force attack.
 
 ### Elliptic Curves over Finite Fields
 
@@ -48,7 +48,7 @@ Moreover, the elliptic curve addition (which is a binary operation) where we dra
 
 <figure><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTd4cnJjdndpMnhzdW9lMDFlY2pqdnUwMWZkbjhzOXp0cWt0cjUydiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7gfWCiWONNyChhlm0n/giphy.gif" alt=""><figcaption></figcaption></figure>
 
-Our set is now made up of all the points that are left on the curve (all the dots in the image above), and one more point. We refer to this set as $$EC(\mathbb{F}_p)$$.  That other point we include is called <mark style="color:purple;">**the point at infinity**</mark> (also referred to as $$O$$), and you can imagine it to be due north of the graph at all times. It allows us to turn our set and this EC addition we showed into a group!
+Our set is now made up of all the points that are left on the curve (all the dots in the image above), and one more point. We refer to this set as $$EC(\mathbb{F}_p)$$. That other point we include is called <mark style="color:purple;">**the point at infinity**</mark> (also referred to as $$O$$), and you can imagine it to be due north of the graph at all times. It allows us to turn our set and this EC addition we showed into a group!
 
 To touch briefly on the point at infinity, imagine drawing a line from due north onto any point. And since every point on the axes has a sibling point that is its reflection in the horizontal line in the middle of our graph, it means that the vertical line will have its third intersection with the curve be the sibling point. Now when we reflect back across the horizontal line in the middle, we will get back to the point we chose. Thus $$O$$ does nothing when we add it to other EC points, just as we said an _identity element_ needed to back when we defined groups.
 
