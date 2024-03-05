@@ -2,7 +2,7 @@
 
 In this subsection we will introduce these mathematical objects: groups and fields. These are the most fundamental mathematical building blocks used in zkSNARKs. In cryptography, we work mainly with values from a field or a group. By constraining the numbers and types of numbers to those in groups and fields, we are able to derive many interesting tools and properties like verifiable computation and security guarantees.
 
-But before we get to groups and fields, we need to talk about modular arithmetic
+But before we get to groups and fields, we need to talk about modular arithmetic.
 
 ## Modular Arithmetic
 
