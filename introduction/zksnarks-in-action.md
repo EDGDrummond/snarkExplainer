@@ -52,7 +52,7 @@ A valid proof of a circuit like this with revealed witness values of the blockâ€
 
 <details>
 
-<summary>Why do ZK-proofs have value?</summary>
+<summary>Why are ZK-proofs valuable?</summary>
 
 Because they demonstrate the correct execution of a computation that has real world relevance, for example correctly processing a transaction, or smart contract, or correctly verifying that a block is valid
 
