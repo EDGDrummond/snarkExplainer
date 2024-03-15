@@ -12,7 +12,7 @@ The starting point of any proof system is the same: "What computation do we need
 
 In PLONK we use plonkish arithmetization to turn the idealized circuit into a detailed zk-circuit. So we now have addition and multiplication gates connected by wires to represent our computation - some of the wire values are decided, but some will have to be inserted by the prover.
 
-So the prover now fills in all the empty wire values using their private data. With that done, we have a filled out circuit. As we mentioned in the intro, we then list all the left input wires from the gates (that would be all the values where a is in the image below, i.e. the left input wires), and get something like $$(\text{value}_1, \text{value}_2, …, \text{value}_n)$$. We represent this list as a Polynomial by simply using them as coefficients, getting out $$(f(x)=\text{value}_1 + \text{value}_2 _ x + \text{value}_3 _ x^2 + \cdots + \text{value}_n \* x^{n-1})$$.
+So the prover now fills in all the empty wire values using their private data. With that done, we have a filled out circuit. As we mentioned in the intro, we then list all the left input wires from the gates (that would be all the values where a is in the image below, i.e. the left input wires), and get something like $$(\text{value}_1, \text{value}_2, …, \text{value}_n)$$. We represent this list as a Polynomial by simply using them as coefficients, getting out $$(f(x)=\text{value}_1 + \text{value}_2 * x + \text{value}_3 * x^2 + \cdots + \text{value}_n * x^{n-1})$$.
 
 <figure><img src="../.gitbook/assets/1 kopya@3x (2).png" alt="" width="375"><figcaption><p>An example multiplication gate.</p></figcaption></figure>
 
