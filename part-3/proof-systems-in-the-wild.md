@@ -20,7 +20,7 @@ The constraint count will also vary depending on the type of arithmetization you
 
 ## Comparing Proof Systems
 
-| Proof System | Arithmetization                             | Advantage(s)                                           | Notable Core Component(s)                                     |
+| Proof System | Arithmetization                             | Advantages                                             | Notable Core Components                                       |
 | ------------ | ------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------- |
 | Groth16      | Rank-1 Constraint System (R1CS)             | Time-tested, efficient, lots of tooling                | Elliptic Curve Pairings, Quadratic Arithmetic Programs (QAPs) |
 | PLONK        | Plonkish                                    | Universal trusted setup, lots of tooling, customizable | Elliptic Curve Pairings, Polynomial Commitment Schemes (PCSs) |
@@ -89,7 +89,7 @@ Let’s look at a cycle of elliptic curves.
 
 <figure><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW1kZzY3NWJkb3MzejZmZ295MnBtZG5pYWowMmtkY2tqNWtqdmxnYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zNElRJbubuIJyaFT7H/giphy.gif" alt=""><figcaption><p>This elliptic curve over the field with 7 elements has 11 elements in its group, and the curve's equation is y^2=x^3+x+1.</p></figcaption></figure>
 
-The above elliptic curves over finite fields look very similar to the [previous gif](../part-2/elliptic-curves-and-dlog.md#elliptic-curves-over-finite-fields) you saw when we explored that topic. In this case, we can see that our first curve is over $$F_{11}$$ and happens to have 7 points in the curve. The second curve is over $F\_7$ and happens to have 11 points in the curve. This is a cycle!
+The above elliptic curves over finite fields look very similar to the [previous gif](../part-2/elliptic-curves-and-dlog.md#elliptic-curves-over-finite-fields) you saw when we explored that topic. In this case, we can see that our first curve is over $$F_{11}$$ and happens to have 7 points in the curve. The second curve is over $$F_7$$ and happens to have 11 points in the curve. This is a cycle!
 
 If we want to make a proof using the first curve, all the numbers or data we work with must be represented as numbers between 1 and 7 (or 0 and 6) since we only have 7 points on the curve to work with. When we make that proof, the result will be a point on the curve, for example maybe the point $$(10,0)$$. Now the values in the coordinates are between 0 and 10 - i.e. they are in $$F_{11}$$.
 
