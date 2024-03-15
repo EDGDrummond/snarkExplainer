@@ -1,4 +1,4 @@
-# Proof Systems in the Wild
+# Proof systems in the wild
 
 Now that you have an idea about all the most basic building blocks used to create a SNARK, let’s explore some popular proof systems. A proof system is how a proof becomes real. Each system uses different methods for creating circuits and comes with different advantages and trade-offs. As an analogy, if a proof is a car, then the proof system is the design of the car factory.
 
@@ -8,16 +8,15 @@ Before diving into the systems, we briefly need to explore one concept that is g
 
 The constraint count determines how big the circuits are. The bigger the circuit, the longer it will take to generate the proof and the more data is required to store the proof. Lower constraint counts mean smaller circuits and faster proving (or proof generation) times, as well as less data needed to store the proof.
 
-<figure><img src ="../.gitbook/assets/plonk table 1.png" alt=""><figcaption><p>Table from the [PLONK paper](https://eprint.iacr.org/2019/953.pdf).</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/plonk table 1.png" alt=""><figcaption><p>Table from the <a href="https://eprint.iacr.org/2019/953.pdf">PLONK paper</a>.</p></figcaption></figure>
 
 During the arithmetization process, the idealized circuit had to be turned into addition and multiplication gates. Each gate adds 1 to the constraint count. Generally speaking, a low constraint count is good and a high constraint count is bad. Most circuit developers are aiming for a minimal constraint count. An optimal circuit should contain enough constraints to verify a computation in a secure and valid way, but not so many that proving time, storage, and computational requirements become too burdensome.
 
-<figure><img src="../.gitbook/assets/Çalışma Yüzeyi 15 kopya@4x.png" alt="" width="375"><figcaption><p>Idealized circuit example from link</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Çalışma Yüzeyi 15 kopya@4x.png" alt="" width="375"><figcaption><p>Idealized circuit example from our <a href="../part-1/zksnarks-in-action.md#idealized-circuits">idealized circuits</a>.</p></figcaption></figure>
 
 Remember that circuits are reusable. Both the prover and verifier will know the layout and logic of the circuit in advance. This circuit will contain many wires with known values and some wires with undecided values. The prover will be putting private information into those undecided wires, for example inserting their private key, their address, or who they are voting for. In the backend, the prover will take the circuit, fill in their private values and make a proof; then the verifier will take in this original circuit and check whether the proof behaves as it is supposed to. Because circuits may be reused millions or even billions of times, the right constraint count is very important.
 
-The constraint count will also vary depending on the type of arithmetization you use. For example, to represent the computation of voting, we can use Plonkish arithmetization or binary arithmetization (what computers do), which would result in different constraint counts. And there are types of problems that are more suited to using Plonkish arithmetization, and types of problems that are more suited to other methods.
-Comparing Proof Systems
+The constraint count will also vary depending on the type of arithmetization you use. For example, to represent the computation of voting, we can use Plonkish arithmetization or binary arithmetization (what computers do), which would result in different constraint counts. And there are types of problems that are more suited to using Plonkish arithmetization, and types of problems that are more suited to other methods. Comparing Proof Systems
 
 ## Comparing Proof Systems
 
@@ -34,7 +33,7 @@ The starting point of any proof system is the same: "What computation do we need
 
 The best way to start comparing ZK proof systems is to start with the first major one. Groth16 was put together in 2016 by Jens Groth and was one of the first systems to make ZK proofs feasible. Groth16 generates small proofs that are of constant size so regardless of the complexity of the statements and circuits, the proof remains succinct. It is one of the most efficient ways to make proofs about computations and is still a very good option for creating small proofs with quick verifier times.
 
-But Groth16 has a big drawback – you have to do additional setup work for every single circuit you make. For example, once you make your transaction circuit [link], you have to do the setup ceremony. Once you have done that setup, you can use this circuit as many times as you want. But then when you need another circuit, for example a voting circuit [link to idealized circuit], you will need to do another trusted setup ceremony.
+But Groth16 has a big drawback – you have to do additional setup work for every single circuit you make. For example, once you make your [transaction circuit](../part-1/zksnarks-in-action.md#idealized-circuits), you have to do the setup ceremony. Once you have done that setup, you can use this circuit as many times as you want. But then when you need another circuit, for example a [voting circuit](../part-1/zksnarks-in-action.md#idealized-circuits), you will need to do another trusted setup ceremony.
 
 Groth16 is great for scenarios where efficiency is paramount, but not so great when you will have a large variety of circuits or computation types that you want to make proofs about.
 
@@ -58,7 +57,7 @@ Polynomial Commitment Schemes (PCS) are an important component of the PLONK proo
 
 <figure><img src="../.gitbook/assets/3 kopya 3@4x.png" alt=""><figcaption><p>Move this image to mini plonk explainer</p></figcaption></figure>
 
-When we introduced polynomial commitment schemes, we said that we open a polynomial by revealing what the polynomial was [link to PCS section]. However you may have noticed that this is not zero knowledge. If our polynomial holds all of our secret information, then when we reveal it, we also reveal the secret information. That is not ideal.
+When we introduced polynomial commitment schemes, we said that we open a polynomial by revealing what the [polynomial](../part-2/polynomial-commitment-schemes.md) was. However you may have noticed that this is not zero knowledge. If our polynomial holds all of our secret information, then when we reveal it, we also reveal the secret information. That is not ideal.
 
 It turns out that we can open polynomials in a different way, a way that keeps the polynomial hidden. We will evaluate the polynomial at a point requested by the verifier. Then we can directly combine this value with our commitment and check whether both evaluations came from the same polynomial using some pretty advanced algebra. So an opening proof will be made (which is just an evaluation of the polynomial at some value), and then a verifier can check whether the opening proof is valid (whether the opening proof value and the commitment came from the same polynomial).
 
@@ -70,7 +69,7 @@ The PCS used by PLONK also allowed for a universal trusted setup. Instead of nee
 
 PLONK has been an incredibly valuable proof system to the applied ZK realm, and there are many derivative works that have taken the system further. [Halo2](https://electriccoin.co/blog/explaining-halo-2/) is a variation of PLONK and is the second iteration of a proof system that was created by the Electric Coin Company (ZCash), creators of one of the first private crypto coins to exist. It is widely used and is the proof system of choice for the [zkEVM Community Edition](https://github.com/privacy-scaling-explorations/zkevm-circuits) being developed by PSE.
 
-<figure><img src="../.gitbook/assets/halo2-image-ecc.jpg" alt=""><figcaption><p>Image from ECC's [blog post](https://electriccoin.co/blog/explaining-halo-2/) announcing Halo 2</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/halo2-image-ecc.jpg" alt=""><figcaption><p>Image from ECC's <a href="https://electriccoin.co/blog/explaining-halo-2/">blog post</a> announcing Halo 2.</p></figcaption></figure>
 
 Halo2 inherits many of the advantages of PLONK such as Plonkish arithmetization but uses two sets of Elliptic Curves instead of one. This allows for verification via cycles of Elliptic Curves, which allows incredible innovation called recursion.
 
@@ -80,18 +79,17 @@ For example, I could tally 1000 votes in an election and create a proof that it 
 
 If another proof system was used we would either have an absolutely huge proof computation (that would probably be unfeasibly large), or we would have many proofs that would all have to be verified. But with Halo2, an aggregate proof can be built to confirm them all. Considering blockchains are built on long chains of data, a tool that can validate a whole chain in a single instance is very powerful.
 
-Achieving this recursive proof system is possible because Halo2 uses a cycle of curves.
-Elliptic curves have two fields: a prime field and a base field that are different sizes, which means they have a different number of field elements and can’t represent each other directly. Halo2 uses two elliptic curves and the curves are inverses of each other. So the four resulting fields share two sets of field elements that are the same size, which means that the base field of one curve is the size of the prime field of the other, and vice versa.
+Achieving this recursive proof system is possible because Halo2 uses a cycle of curves. Elliptic curves have two fields: a prime field and a base field that are different sizes, which means they have a different number of field elements and can’t represent each other directly. Halo2 uses two elliptic curves and the curves are inverses of each other. So the four resulting fields share two sets of field elements that are the same size, which means that the base field of one curve is the size of the prime field of the other, and vice versa.
 
 By allowing proofs of computations to be verified in the context of another, recursion becomes possible. Since we use elliptic curves to verify computations, you can directly feed the verification of one proof from one curve into the other.
 
 Let’s look at a cycle of elliptic curves.
 
-<figure><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2E5eXBzdXgydzdqa3p6czVreGh6ZWhwMmVodTIycDhicmtzZW5jYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ih2BZXG1PNFi4tBgWF/giphy.gif" alt=""><figcaption>This curve over $$F_{11}$$ is made with $$y^2=x^3+6x+7$$.</figcaption></figure>
+<figure><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2E5eXBzdXgydzdqa3p6czVreGh6ZWhwMmVodTIycDhicmtzZW5jYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ih2BZXG1PNFi4tBgWF/giphy.gif" alt=""><figcaption><p>This elliptic curve over the field with 11 elements has 7 elements in its group, and the curve's equation is y^2=x^3+6x+7.</p></figcaption></figure>
 
-<figure><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW1kZzY3NWJkb3MzejZmZ295MnBtZG5pYWowMmtkY2tqNWtqdmxnYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zNElRJbubuIJyaFT7H/giphy.gif" alt=""><figcaption>This curve over $$F_7$$ is made with $$y^2=x^3+x+1$$.</figcaption></figure>
+<figure><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW1kZzY3NWJkb3MzejZmZ295MnBtZG5pYWowMmtkY2tqNWtqdmxnYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zNElRJbubuIJyaFT7H/giphy.gif" alt=""><figcaption><p>This elliptic curve over the field with 7 elements has 11 elements in its group, and the curve's equation is y^2=x^3+x+1.</p></figcaption></figure>
 
-The above elliptic curves over finite fields look very similar to the previous gif [link to gitbook] you saw when we explored that topic. In this case, we can see that our first curve is over $$F_{11}$$ and happens to have 7 points in the curve. The second curve is over $F_7$ and happens to have 11 points in the curve. This is a cycle!
+The above elliptic curves over finite fields look very similar to the [previous gif](../part-2/elliptic-curves-and-dlog.md#elliptic-curves-over-finite-fields) you saw when we explored that topic. In this case, we can see that our first curve is over $$F_{11}$$ and happens to have 7 points in the curve. The second curve is over $F\_7$ and happens to have 11 points in the curve. This is a cycle!
 
 If we want to make a proof using the first curve, all the numbers or data we work with must be represented as numbers between 1 and 7 (or 0 and 6) since we only have 7 points on the curve to work with. When we make that proof, the result will be a point on the curve, for example maybe the point $$(10,0)$$. Now the values in the coordinates are between 0 and 10 - i.e. they are in $$F_{11}$$.
 
@@ -105,7 +103,7 @@ zkSTARKs are a proof system that do not need to conduct any setup ceremony and a
 
 STARKs use hash functions to both commit to their data (in a similar way to PCSs), and to also structure their dataset via something called a [Merkle Tree](https://www.youtube.com/watch?v=3giNelTfeAk). Merkle Trees are actually prevalent across the blockchain industry because they are a good way to create fingerprints of large datasets that can be used to efficiently confirm some piece of data was part of some data set. For example, we can use a Merkle Tree to compress all transactions or accounts in Ethereum into a single number, and we can use that number to create a short proof that a transaction is part of that set of accounts or balances.
 
-Unlike the other proof systems mentioned, zkSTARKs do not require a trusted setup. In systems like PLONK, the DLOG hardness [link to gitbook section] is used as a security assumption.That assumption is then used to make some EC points of unknown order (via a trusted setup) and a scheme to commit to polynomials that were binding and hiding. The resulting Polynomial Commitment Schemes (PCSs) are currently secure but if the DLOG hardness assumption is broken (which quantum computers do indeed break), then the schemes also break.
+Unlike the other proof systems mentioned, zkSTARKs do not require a trusted setup. In systems like PLONK, the [DLOG hardness](../part-2/elliptic-curves-and-dlog.md#discrete-logarithm-problem-dlog) is used as a security assumption.That assumption is then used to make some EC points of unknown order (via a trusted setup) and a scheme to commit to polynomials that were binding and hiding. The resulting Polynomial Commitment Schemes (PCSs) are currently secure but if the DLOG hardness assumption is broken (which quantum computers do indeed break), then the schemes also break.
 
 STARK security instead relies on the hardness assumption of hash functions; that hash functions are random and that randomness can't be broken by quantum computers. This is plausibly quantum secure because we do not know of any quantum algorithms that break these hash functions (not yet at least).
 
