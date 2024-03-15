@@ -1,4 +1,4 @@
-# Proof Systems in the Wild
+# Proof systems in the wild
 
 Now that you have an idea about all the most basic building blocks used to create a SNARK, let’s explore some popular proof systems. A proof system is how a proof becomes real. Each system uses different methods for creating circuits and comes with different advantages and trade-offs. As an analogy, if a proof is a car, then the proof system is the design of the car factory.
 
@@ -14,7 +14,7 @@ In PLONK we use plonkish arithmetization to turn the idealized circuit into a de
 
 So the prover now fills in all the empty wire values using their private data. With that done, we have a filled out circuit. As we mentioned in the intro, we then list all the left input wires from the gates (that would be all the values where a is in the image below, i.e. the left input wires), and get something like $$(\text{value}_1, \text{value}_2, …, \text{value}_n)$$. We represent this list as a Polynomial by simply using them as coefficients, getting out $$(f(x)=\text{value}_1 + \text{value}_2 _ x + \text{value}_3 _ x^2 + \cdots + \text{value}_n \* x^{n-1})$$.
 
-<figure><img src="../.gitbook/assets/1 kopya@3x (2).png" alt=""><figcaption><p>An example multiplication gate.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/1 kopya@3x (2).png" alt="" width="375"><figcaption><p>An example multiplication gate.</p></figcaption></figure>
 
 We can do that for the right input wires too, as well as the output wires. And then we can commit to the polynomials using our PCS. And now we can make proofs about our computation by opening commitments (called querying in the image above since we query polynomials to get their openings). And this will keep all our data secret thanks to the DLOG assumption.
 
