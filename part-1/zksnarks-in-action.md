@@ -1,7 +1,5 @@
 # zkSNARKs in Action
 
-## 2. zkSNARKs in Action
-
 We use ZK proof systems as a pragmatic tool. These proof systems can make blockchains much faster, and also allow us to build in more privacy.
 
 To recap, zkSNARKs are a form of verifiable computation that take a circuit and a witness and make a proof claiming that the witness satisfies the constraints specified in the circuit. This proof is probabilistic, which means the prover can make the possibility of a fake proof so small that it is considered practically infeasible. Moreover, the prover gets to choose which values in the witness to publicly share, if any at all.
@@ -76,7 +74,7 @@ We could also have $$f(x,y)=2xy^2$$. Now we have a second function, also called 
 
 Polynomials are a very useful mathematical object. It is because of polynomials that we get the succinctness and zero-knowledge properties that are central to zkSNARK tech. They can hold a lot of information and we can check that the information is what we expected with a very high degree of certainty by only looking at a single value. This little black box is light in weight but heavy in data, and it can hold secrets. In later sections we will explore why this is true and elucidate more clearly what it means.
 
-Because polynomials are such [useful tools and building blocks](https://app.streameth.org/devconnect/progcrypto/session/why\_you\_should\_care\_about\_polynomials), all zkSNARKs make use of polynomials in some fashion. More precisely, we will be representing our witness values and constraints in polynomials, and then we will commit to these polynomials via something known as a polynomial commitment scheme.
+Because polynomials are such [useful tools and building blocks](https://app.streameth.org/devconnect/progcrypto/session/why_you_should_care_about_polynomials), all zkSNARKs make use of polynomials in some fashion. More precisely, we will be representing our witness values and constraints in polynomials, and then we will commit to these polynomials via something known as a polynomial commitment scheme.
 
 <details>
 
