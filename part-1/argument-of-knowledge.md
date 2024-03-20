@@ -12,11 +12,11 @@ Math can be thought of as a complex logical game where the basic rule is consist
 
 <mark style="color:purple;">**Proof systems**</mark> will give us mathematical proofs that say something like “with 99.9999999999999999% likelihood, the following statement is true: Alice owns more than 1 ETH.” But the value of this mathematical proof is in its relation to the real world.
 
-A ZK proof could also tell us that:
+With enough infrastructure, a ZK proof could also tell us that:
 
-- Alice is over a certain age
-- Alice can vote in a certain jurisdiction
-- Alice has no criminal record
+* Alice is over a certain age
+* Alice can vote in a certain jurisdiction
+* Alice has no criminal record
 
 The percentage likelihood means <mark style="color:purple;">**ZK proofs**</mark> are probabilistic. They are not true with absolute certainty, but the chances of them being wrong or broken are practically zero.
 
