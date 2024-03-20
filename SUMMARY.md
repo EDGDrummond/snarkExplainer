@@ -1,7 +1,6 @@
 # Table of contents
 
 * [🪄 SNARK Fundamentals: A Complete Beginner's Introduction](README.md)
-* [Course outline](course-outline.md)
 * [Part 1. What are SNARKs?](part-1/README.md)
   * [Argument of Knowledge](part-1/argument-of-knowledge.md)
   * [zkSNARKs in Action](part-1/zksnarks-in-action.md)
