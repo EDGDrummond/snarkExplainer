@@ -10,6 +10,11 @@ Modular arithmetic is where we take positive, whole numbers and put an upper lim
 
 For example if we make 5 the upper limit, then 5 will be akin to 0. If we were to count with this arithmetic, starting at 0, it would go 0, 1, 2, 3, 4, 0, 1, ...
 
+<!-- insert local gif asset -->
+<figure><img src="../.gitbook/assets/modular-arithmetic/ModularArithmetic5_11.mp4" alt=""><figcaption><p>Local mod</p></figcaption></figure>
+
+![[alt text for your GIF]](../.gitbook/assets/modular-arithmetic/ModularArithmetic5_11.mp4)
+
 <figure><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXFqenp5ZzZza28wbnBwM3RsY2djcnU3M3MwenNqd21zeTd4eG95YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mfZvZSDs5KgCFdVaUR/giphy.gif" alt=""><figcaption></figcaption></figure>
 
 So what happens if we do addition here? We will have to 'loop back' to get numbers between $$0$$ and $$4$$. For example if we do $$3+4$$ we get $$7$$, but that is not in the range we specified since $$5$$ is the upper bound. What we do here is keep removing $$5$$ until we are in our range. Since $$7-5=2$$ we have that $$3+4=2$$. To be even clearer, we should write $$3+4=7\equiv2\bmod5$$ to also indicate that $$5$$ is the upper limit.
@@ -46,15 +51,15 @@ Now for the actual definition: A <mark style="color:purple;">**group**</mark> co
 
 Would the modular set $$\{0,1,2,3,4\}$$ with addition be a group? Well we have a set, a binary operation and an identity element ($$0$$), so we just need to check that every element in the set can be added to another element in the set to get $$0$$. Let’s check:
 
-* $$1+4=5\equiv 0\bmod 5$$ (so that is true for $$1$$ and $$4$$)
-* $$2+3=5\equiv 0\bmod 5$$ (so that is true for $$2$$ and $$3$$).
+- $$1+4=5\equiv 0\bmod 5$$ (so that is true for $$1$$ and $$4$$)
+- $$2+3=5\equiv 0\bmod 5$$ (so that is true for $$2$$ and $$3$$).
 
 Great, we have a group!
 
 What about the same set but with multiplication where 1 is the identity element? Well let’s check:
 
-* $$2*3=6 \equiv 1\bmod 5$$ (so that solves $$2$$ and $$3$$)
-* $$4*4=16 \equiv 1\bmod 5$$ (that solves $$4$$, it is its own inverse)
+- $$2*3=6 \equiv 1\bmod 5$$ (so that solves $$2$$ and $$3$$)
+- $$4*4=16 \equiv 1\bmod 5$$ (that solves $$4$$, it is its own inverse)
 
 That just leaves us to find a multiplicative inverse for $$0$$, some element that when multiplied by $$0$$ returns $$1$$. But we learnt at school that anything multiplied by $$0$$ gives us back $$0$$. So $$0$$ definitely does not have an inverse; hence it is not a group.
 

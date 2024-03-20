@@ -4,7 +4,7 @@ In exploring new areas, the first task is usually figuring out what the definiti
 
 In the following sections, we will outline a few simple ideas so that we can build upon them to arrive at a far more complex and more powerful tool: zero-knowledge proofs.
 
-## Mathematical guarantees
+## Mathematical Guarantees
 
 Math can be thought of as a complex logical game where the basic rule is consistency. Contradictions are not allowed, which means one statement and its opposite cannot both be true in the same context. With consistency and some basic assumptions called <mark style="color:purple;">**axioms**</mark>, we can derive new truths and objects in the form of <mark style="color:purple;">**theorems**</mark> via proofs. By playing around with definitions or moving different objects around in new ways, new mathematical areas and tools can appear - these allow us to build things that were not possible before as beautifully demonstrated by this video here:
 
@@ -14,13 +14,13 @@ Math can be thought of as a complex logical game where the basic rule is consist
 
 With enough infrastructure, a ZK proof could also tell us that:
 
-* Alice is over a certain age
-* Alice can vote in a certain jurisdiction
-* Alice has no criminal record
+- Alice is over a certain age
+- Alice can vote in a certain jurisdiction
+- Alice has no criminal record
 
 The percentage likelihood means <mark style="color:purple;">**ZK proofs**</mark> are probabilistic. They are not true with absolute certainty, but the chances of them being wrong or broken are practically zero.
 
-As an analogy, we often work in realms where there are 2^256 values, which is about 10^77 (10 with 77 zeroes after it). That’s roughly the number of particles in the entire observable universe, and we quite simply will never have traditional computers that can search a space this large to find a hidden value. And that’s the basis of a lot of our security. You can check out a more beautifully presented example of this size in this video here:
+As an analogy, we often work in realms where there are $$2^{256}$$ values, which is about $$10^{77}$$ ($$10$$ with $$77$$ zeroes after it). That’s roughly the number of particles in the entire observable universe, and we quite simply will never have traditional computers that can search a space this large to find a hidden value. And that’s the basis of a lot of our security. You can check out a more beautifully presented example of this size in this video here:
 
 {% embed url="https://www.youtube.com/watch?ab_channel=3Blue1Brown&v=S9JGmA5_unY" %}
 
@@ -36,11 +36,11 @@ As we delve deeper we will see in more detail what kinds of statements we will b
 
 <summary>What sort of claim does a zk proof make?</summary>
 
-"With 99.99...% likelihood, the following claim is true: Alice has >1 Eth"
+"With 99.99...% likelihood, the following claim is true: Alice has more than 1 Eth"
 
 </details>
 
-## Verifiable computation
+## Verifiable Computation
 
 <mark style="color:purple;">**zkSNARKs**</mark> are an example of <mark style="color:purple;">**Verifiable Computation**</mark> (VC), which means a system where computational work is checked to see if it was done correctly. The proof that is created is evidence that the computation was done correctly.
 
@@ -80,7 +80,7 @@ Instead of sketching filled out AND gates, we can instead put variable wire valu
 
 <figure><img src="../.gitbook/assets/1@3x (2).png" alt="" width="249"><figcaption><p>A generic AND gate with variable wire values</p></figcaption></figure>
 
-In this sketch, x represents input1, y represents input2, and z represents the output. When we sketch out circuits later we are usually going to assume that the wire values are variable.
+In this sketch, $$x$$ represents input 1, $$y$$ represents input 2, and $$z$$ represents the output. When we sketch out circuits later we are usually going to assume that the wire values are variable.
 
 When we put lots of gates together, we get something we call a circuit. By putting gates together in the right ways, we can do more advanced things, like adding or multiplying large numbers. It is billions of gates like these, interconnected and stacked on top of each other, that allow a computer to use the internet and read this text.
 
@@ -108,27 +108,27 @@ In a ZK circuit, some values will be determined by constraints, and some will be
 
 The image above gives you two perspectives on the gate. The first is like the boolean gates we drew earlier that were visually nice, and the second is the same constraint but written more mathematically. We show you both interpretations because some proof systems use constraints that can’t be drawn in a visually pretty way like this multiplication gate.
 
-What values do a and b take? There are 2 possibilities – either they are variable values where we can place any number when filling out the circuit, or they are predetermined and the circuit specifies the value.
+What values do $$a$$ and $$b$$ take? There are 2 possibilities – either they are variable values where we can place any number when filling out the circuit, or they are predetermined and the circuit specifies the value.
 
-In this example, if a is variable and b is predetermined to be 23, then c must be 23 times whatever value a is chosen to be.
+In this example, if $$a$$ is variable and $$b$$ is predetermined to be 23, then $$c$$ must be 23 times whatever value $$a$$ is chosen to be.
 
 <figure><img src="../.gitbook/assets/1 kopya 2@3x (2).png" alt="" width="375"><figcaption><p>The same constraint as above, but here b is specified to be 23</p></figcaption></figure>
 
 When we fill out a circuit, what we are doing is plugging in values for all the variable values that the circuit had, as well as determining any downstream values.
 
-In the example above we said that $$a$$ was variable, so when we fill out the circuit we will set a value for it, let’s say 3. Then we need to determine the downstream values, which in this case is c. The predetermined value for b is 23, so c then must be 69.
+In the example above we said that $$a$$ was variable, so when we fill out the circuit we will set a value for it, let’s say 3. Then we need to determine the downstream values, which in this case is $$c$$. The predetermined value for $$b$$ is 23, so $$c$$ then must be 69.
 
-In the example above we said that a was variable, so when we fill out the circuit we will set a value for it, let’s say 3. Then we need to determine the downstream values, which in this case is c. The predetermined value for b is 23, so c then must be 69.
+In the example above we said that a was variable, so when we fill out the circuit we will set a value for it, let’s say 3. Then we need to determine the downstream values, which in this case is $$c$$. The predetermined value for $$b$$ is 23, so $$c$$ then must be 69.
 
 <figure><img src="../.gitbook/assets/1 kopya 3@3x (2).png" alt="" width="375"><figcaption><p>A filled out or satisfied instance of the above 2 constraints (either every value was variable, or b was set to 23)</p></figcaption></figure>
 
 We refer to the collection of all values that aren’t predetermined by the circuit as the <mark style="color:purple;">**witness**</mark>. A witness is considered to be valid or invalid depending on whether it can fill out the circuit correctly.
 
-In the above example, c would be a part of the witness, whereas b wouldn’t because it was already specified by the circuit.
+In the above example, $$c$$ would be a part of the witness, whereas b wouldn’t because it was already specified by the circuit.
 
 <figure><img src="../.gitbook/assets/1 kopya 4@3x (2).png" alt="" width="375"><figcaption><p>2 examples of a constraint (left) with a valid witness (right)</p></figcaption></figure>
 
-The above circuits each with a valid witness because the math checks out. In the first circuit b is a part of the witness because it is not specified by the circuit.
+The above circuits each with a valid witness because the math checks out. In the first circuit $$b$$ is a part of the witness because it is not specified by the circuit.
 
 As you may have noticed, even in our simple circuit example, there are many possible witness values that you could plug in to make the circuit work. This is why circuits can be reused. Once the order of operations and constraints have been defined, the witness can be changed to serve different purposes.
 
