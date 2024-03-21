@@ -17,3 +17,19 @@ The prover will fill in all the empty wire values using their private data. With
 We can do that for the right input wires too, as well as the output wires. And then we can commit to the polynomials using our [PCS](../part-2/polynomial-commitment-schemes.md). And now we can make proofs about our computation by opening commitments (called querying since we query polynomials to get their openings). And this will keep all our data secret thanks to the [DLOG assumption](../part-2/elliptic-curves-and-dlog.md).
 
 Lastly we will use the openings to our commitments and [elliptic curve cryptography](../part-2/elliptic-curves-and-dlog.md) to check that they satisfy the expected relationship. And if they satisfy the expected relationship, then by the [Schwartz-Zippel Lemma](../part-2/schwartz-zippel-and-polynomials.md), we can conclude that the computation was indeed valid.
+
+# Constraint Count
+
+Before diving into the systems, we briefly need to explore one concept that is going to help us understand the idea of efficiency as it relates to circuits. This is the concept of a constraint count.
+
+The constraint count determines how big the circuits are. The bigger the circuit, the longer it will take to generate the proof and the more data is required to store the proof. Lower constraint counts mean smaller circuits and faster proving (or proof generation) times, as well as less data needed to store the proof.
+
+<figure><img src="../.gitbook/assets/plonk table 1.png" alt="" width="375"><figcaption><p>Table from the PLONK paper.</p></figcaption></figure>
+
+During the arithmetization process, the idealized circuit had to be turned into addition and multiplication gates. Each gate adds 1 to the constraint count. Generally speaking, a low constraint count is good and a high constraint count is bad. Most circuit developers are aiming for a minimal constraint count. An optimal circuit should contain enough constraints to verify a computation in a secure and valid way, but not so many that proving time, storage, and computational requirements become too burdensome.
+
+<figure><img src="../.gitbook/assets/Çalışma Yüzeyi 15 kopya@4x.png" alt="" width="375"><figcaption><p>Idealized circuits from our idealized circuits subsection.</p></figcaption></figure>
+
+Remember that circuits are reusable. Both the prover and verifier will know the layout and logic of the circuit in advance. This circuit will contain many wires with known values and some wires with undecided values. The prover will be putting private information into those undecided wires, for example inserting their private key, their address, or who they are voting for. In the backend, the prover will take the circuit, fill in their private values and make a proof; then the verifier will take in this original circuit and check whether the proof behaves as it is supposed to. Because circuits may be reused millions or even billions of times, the right constraint count is very important.
+
+The constraint count will also vary depending on the type of arithmetization you use. For example, to represent the computation of voting, we can use Plonkish arithmetization or binary arithmetization (what computers do), which would result in different constraint counts. And there are types of problems that are more suited to using Plonkish arithmetization, and types of problems that are more suited to other methods. Comparing Proof Systems

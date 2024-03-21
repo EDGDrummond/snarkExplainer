@@ -32,15 +32,15 @@ Firstly, we need to consider the degree of our polynomials. If a polynomial $$f$
 
 If we have a constant polynomial, i.e. where there are no powers of $$x$$, for example $$f(x)=4$$, then the graph is just a horizontal line. Okay this actually breaks our rule since $$f(x)=0$$ crosses the x-axis everywhere. But the case of a constant polynomial (there are no powers of $$x$$, so the degree is $$0$$) is a special case.
 
-<figure><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXZzbDgzNnQxbmlkZHliOTRjNHRxcms3NHRqemp3OTNxN2RtNThleCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gF3UmRoGBj6IBssPrv/giphy.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/ec-gifs/const-fun.gif" alt=""><figcaption></figcaption></figure>
 
 What about if the degree is $$1$$, like $$f(x)=x$$? Well this curve will just be an upwards slope of $$45^\circ$$. According to our rule, this line cannot cross any horizontal line more than once.
 
-<figure><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHhxdmF6ZTVvY2lscWgzYnY3dzJiMGJpajljYmYwYTFleDluNm9ncCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9geO1boG3PLwc4VYBM/giphy.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/ec-gifs/simple-curves.gif" alt=""><figcaption></figcaption></figure>
 
 If we were to look at $$f(x)=x^2$$, we would have a more bendy curve. But let's try the same thing, draw horizontal lines and try to see if the curve crosses these lines at more than two points. Again, we won't find any.
 
-<figure><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWYzczE5czY3eDlpNG5uM3JvcHFsNXcxMGZhNnppaGp2cjdiajc1ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nNC7jjAPHyFWSq8Rni/giphy.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/ec-gifs/simple-curve-intersect.gif" alt=""><figcaption></figcaption></figure>
 
 These examples show that for a degree $$d$$ polynomial, any horizontal line in the graph cannot be crossed by the polynomial’s curve more than $$d$$ times. If $$a$$ is genuinely chosen at random after the polynomials are created, then it is not feasible to engineer $$g$$ to evaluate to the same value as $$f$$ at $$a$$. Since the only way to arrive at the same value is by guessing, all we are left with is probability.
 
