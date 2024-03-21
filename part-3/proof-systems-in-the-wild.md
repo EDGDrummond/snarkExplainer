@@ -1,7 +1,5 @@
 # A Bird’s Eye View of PLONK
 
-## A Bird’s Eye View of PLONK
-
 We did all that work to explore the mathematical components behind PLONK and other proof systems, so let’s fit them together to see how they interact.
 
 <figure><img src="../.gitbook/assets/3 kopya 3@4x.png" alt=""><figcaption><p>A bird's eye view of PLONK.</p></figcaption></figure>
@@ -34,4 +32,4 @@ During the arithmetization process, the idealized circuit had to be turned into 
 
 Remember that circuits are reusable. Both the prover and verifier will know the layout and logic of the circuit in advance. This circuit will contain many wires with known values and some wires with undecided values. The prover will be putting private information into those undecided wires, for example inserting their private key, their address, or who they are voting for. In the backend, the prover will take the circuit, fill in their private values and make a proof; then the verifier will take in this original circuit and check whether the proof behaves as it is supposed to. Because circuits may be reused millions or even billions of times, the right constraint count is very important.
 
-The constraint count will also vary depending on the type of arithmetization you use. For example, to represent the computation of voting, we can use Plonkish arithmetization or binary arithmetization (what computers do), which would result in different constraint counts. And there are types of problems that are more suited to using Plonkish arithmetization, and types of problems that are more suited to other methods. Comparing Proof Systems
+The constraint count will also vary depending on the type of arithmetization you use. For example, to represent the computation of voting, we can use Plonkish arithmetization or binary arithmetization (what computers do), which would result in different constraint counts. And there are types of problems that are more suited to using Plonkish arithmetization, and types of problems that are more suited to other methods.&#x20;
