@@ -14,7 +14,7 @@ Idealized circuits represent the core idea of what a computation should do witho
 
 Here are a couple sketches of idealized circuits for things we said we might want to prove earlier.
 
-<figure><img src="../.gitbook/assets/Çalışma Yüzeyi 15 kopya@4x.png" alt="" width="375"><figcaption><p>Left circuit is a voting circuit: check that the voter id is a valid voting id and that the signature is valid, combine with vote for data. Right circuit is a check that Alice has more than 1 ETH: check that Ethereum state input is valid and that the specified account has enough ETH</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Çalışma Yüzeyi 15 kopya@4x.png" alt="" width="563"><figcaption><p>Left circuit is a voting circuit: check that the voter id is a valid voting id and that the signature is valid, combine with vote for data. Right circuit is a check that Alice has more than 1 ETH: check that Ethereum state input is valid and that the specified account has enough ETH</p></figcaption></figure>
 
 Coming up with idealized circuits is easy, which is great because it allows us to discuss them quickly without needing to add in tons of detail. But we do have to be careful. Firstly, making any circuit takes a lot of work, so bear that in mind when trying to find useful circuits. Secondly, not all ideas can actually be represented as computational circuits. In fact it takes some understanding of zkSNARKs to be able to understand what circuits are possible and what are not.
 
@@ -74,7 +74,7 @@ We could also have $$f(x,y)=2xy^2$$. Now we have a second function, also called 
 
 Polynomials are a very useful mathematical object. It is because of polynomials that we get the succinctness and zero-knowledge properties that are central to zkSNARK tech. They can hold a lot of information and we can check that the information is what we expected with a very high degree of certainty by only looking at a single value. This little black box is light in weight but heavy in data, and it can hold secrets. In later sections we will explore why this is true and elucidate more clearly what it means.
 
-Because polynomials are such [useful tools and building blocks](https://app.streameth.org/devconnect/progcrypto/session/why_you_should_care_about_polynomials), all zkSNARKs make use of polynomials in some fashion. More precisely, we will be representing our witness values and constraints in polynomials, and then we will commit to these polynomials via something known as a polynomial commitment scheme.
+Because polynomials are such [useful tools and building blocks](https://app.streameth.org/devconnect/progcrypto/session/why\_you\_should\_care\_about\_polynomials), all zkSNARKs make use of polynomials in some fashion. More precisely, we will be representing our witness values and constraints in polynomials, and then we will commit to these polynomials via something known as a polynomial commitment scheme.
 
 <details>
 

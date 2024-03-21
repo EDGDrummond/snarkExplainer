@@ -10,17 +10,17 @@ Modular arithmetic is where we take positive, whole numbers and put an upper lim
 
 For example if we make 5 the upper limit, then 5 will be akin to 0. If we were to count with this arithmetic, starting at 0, it would go 0, 1, 2, 3, 4, 0, 1, ...
 
-<figure><img src="../.gitbook/assets/modular-arithmetic/mod-arith-5-11.gif" alt=""><figcaption><p></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/modular-arithmetic/mod-arith-5-11.gif" alt=""><figcaption></figcaption></figure>
 
 So what happens if we do addition here? We will have to 'loop back' to get numbers between $$0$$ and $$4$$. For example if we do $$3+4$$ we get $$7$$, but that is not in the range we specified since $$5$$ is the upper bound. What we do here is keep removing $$5$$ until we are in our range. Since $$7-5=2$$ we have that $$3+4=2$$. To be even clearer, we should write $$3+4=7\equiv2\bmod5$$ to also indicate that $$5$$ is the upper limit.
 
-<figure><img src="../.gitbook/assets/modular-arithmetic/mod-example-3-4-+.gif" alt=""><figcaption><p></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/modular-arithmetic/mod-example-3-4-+.gif" alt=""><figcaption></figcaption></figure>
 
 Also $$2+3=5=0$$. Or more accurately, $$2+3=5\equiv0\bmod5$$, where the new equals sign $$\equiv$$ and $$\bmod$$ name indicate to us that we are doing modular arithmetic.
 
 Similarly with multiplication, if we had $$3*4=12$$, we have that $$12-5=7$$ and $$7-5=2$$, so $$3*4=12\equiv2\bmod5$$.
 
-<figure><img src="../.gitbook/assets/modular-arithmetic/mod-example-3-4-*.gif" alt=""><figcaption><p></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/modular-arithmetic/mod-example-3-4-.gif" alt=""><figcaption></figcaption></figure>
 
 ## Groups
 
@@ -36,25 +36,25 @@ We can't put any set, binary operation and identity element together to get a gr
 
 You may think that $$-2$$ is the number that we must add to $$2$$ to get to $$0$$, but since we are in modular groups, this is not the whole picture. If we are working $$\bmod 5$$, then $$2+3=5=0$$. Thus $$3$$ is the number we add to $$2$$ to get $$0$$ (if we are working $$\bmod 5$$).
 
-<figure><img src="../.gitbook/assets/modular-arithmetic/mod-example-2-3-+.gif" alt=""><figcaption><p></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/modular-arithmetic/mod-example-2-3-+.gif" alt=""><figcaption></figcaption></figure>
 
 And if multiplication is our operation, then we need to get to $$1$$ so for every number $$a$$ in the set there must be another number $$b$$ in the set such that $$a*b=1$$. Let’s go back to our example in $$\bmod 5$$ where $$a=2$$. In this case $$2*3 = 6 \equiv 1 \bmod 5$$, so $$3$$ is the inverse of $$2$$ when multiplying.
 
-<figure><img src="../.gitbook/assets/modular-arithmetic/mod-example-2-3-*.gif" alt=""><figcaption><p>The multiplicative inverse is how we get to 1 (the identity element for multiplication)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/modular-arithmetic/mod-example-2-3-.gif" alt=""><figcaption><p>The multiplicative inverse is how we get to 1 (the identity element for multiplication)</p></figcaption></figure>
 
 Now for the actual definition: A <mark style="color:purple;">**group**</mark> consists of a set, a binary operation, and an identity element on the binary operation; moreover, every element in the set must have an inverse element that is also in the set.
 
 Would the modular set $$\{0,1,2,3,4\}$$ with addition be a group? Well we have a set, a binary operation and an identity element ($$0$$), so we just need to check that every element in the set can be added to another element in the set to get $$0$$. Let’s check:
 
-- $$1+4=5\equiv 0\bmod 5$$ (so that is true for $$1$$ and $$4$$)
-- $$2+3=5\equiv 0\bmod 5$$ (so that is true for $$2$$ and $$3$$).
+* $$1+4=5\equiv 0\bmod 5$$ (so that is true for $$1$$ and $$4$$)
+* $$2+3=5\equiv 0\bmod 5$$ (so that is true for $$2$$ and $$3$$).
 
 Great, we have a group!
 
 What about the same set but with multiplication where 1 is the identity element? Well let’s check:
 
-- $$2*3=6 \equiv 1\bmod 5$$ (so that solves $$2$$ and $$3$$)
-- $$4*4=16 \equiv 1\bmod 5$$ (that solves $$4$$, it is its own inverse)
+* $$2*3=6 \equiv 1\bmod 5$$ (so that solves $$2$$ and $$3$$)
+* $$4*4=16 \equiv 1\bmod 5$$ (that solves $$4$$, it is its own inverse)
 
 That just leaves us to find a multiplicative inverse for $$0$$, some element that when multiplied by $$0$$ returns $$1$$. But we learnt at school that anything multiplied by $$0$$ gives us back $$0$$. So $$0$$ definitely does not have an inverse; hence it is not a group.
 
