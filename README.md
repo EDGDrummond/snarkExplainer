@@ -4,15 +4,39 @@ description: Ki Chong Tran & Errol Drummond
 
 # 🪄 SNARK Fundamentals: A Complete Beginner's Introduction
 
-**Motivation**
+Is this course for me? \
+\
+This is a really important question to ask yourself before any commitment, regardless of its size. If you intend to do or learn anything related to this technology **and are not sure where to start,** then then this course will be helpful to you.&#x20;
 
-Zero-knowledge (ZK) proofs were first discovered and written about in the 1980s. [“The Knowledge Complexity of Interactive Proof Systems](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The\_Knowledge\_Complexity\_Of\_Interactive\_Proof\_Systems.pdf)” presented a theory of knowledge in which what was true was not simply what was witnessed or observed. Instead, zero-knowledge proofs say a thing is true only if you can create a mathematical proof that it is true.  A thing was true if it could be computed in an objectively verifiable way.&#x20;
+Regardless of background, most people with some dedication, should be able to follow all the concepts presented here. In this adventure we will look at the defining characteristics of zkSNARK technology, a peak at some of the mathematics underlying it, and then a brief overview of some of the systems out there.
 
-This new system came with interesting properties. The first is that a proof reveals only one valid statement. No other information is revealed. With this zero-knowledge property, money, voting, identity, and many other multi-party systems could be designed in a way where privacy is preserved.&#x20;
+***
 
-Cryptographic protocols made navigating and spending money in open digital spaces like the internet possible because we trust cryptography to do things like validate our identities, verify the places we visit online, and allow only us to access our bank accounts. But the internet has changed drastically since the early era, and many have now come to realize that the data we create doesn’t belong to us and we are tracked and surveilled to no end. With an upgrade in cryptography in the form of zero-knowledge technology and the motivation to build things differently, we can create protocols, platforms, and applications with privacy as the default.
+[Part 1 (What are SNARKs?)](part-1/) of this course take you from:
 
-The other property of ZK proofs is efficiency. Notably a type of ZK proof called [zkSNARKs](https://www.youtube.com/watch?v=h-94UhJLeck) had to be succinct: a small amount of data that is fast to verify. It must take less time to verify a SNARK proof than to recompute the statements the SNARK is proving are valid. This scaling property could help make other technologies, especially decentralized ones like Ethereum, faster and more efficient without any sacrifice in validity.&#x20;
+{% hint style="success" %}
+_no mathematical background ===> high-level understanding of SNARKs_
+{% endhint %}
+
+By the end of Part 1 you should have some intuition for what is and isn't possible with SNARK technology.
+
+[Part 2 (Math to get to PLONK)](part-2/) of this course take you from:
+
+{% hint style="success" %}
+_high-level understanding of SNARKs ===> functional understanding of SNARKs_
+{% endhint %}
+
+Part 2 will delve into the mathematics and applied aspects of SNARKs. After Part 2, you should be able to understand how and why SNARKs are able to verify computations.
+
+[Part 3 (Proof systems in the wild) ](part-3/)of this course take you from:
+
+{% hint style="success" %}
+_functional understanding of SNARKs ===> ability to meaningfully engage with SNARKS_
+{% endhint %}
+
+By the end of Part 3, you should have enough understanding about this technology to engage in high level, meaningful conversations about it. And hopefully know enough to start building.
+
+***
 
 Zero-knowledge proofs say a thing is true only if you can create a mathematical proof that it is true. And the proof is only true if it satisfies the verifier. And the verifier is only satisfied if the witness is correct. And the witness is only correct if… And so on. And so on, deep into the depths of mathematical theory.&#x20;
 
