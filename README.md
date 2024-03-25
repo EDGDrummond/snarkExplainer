@@ -35,11 +35,3 @@ _functional understanding of SNARKs ===> ability to meaningfully engage with SNA
 {% endhint %}
 
 By the end of Part 3, you should have enough understanding about this technology to engage in high level, meaningful conversations about it. And hopefully know enough to start building.
-
-***
-
-Zero-knowledge proofs say a thing is true only if you can create a mathematical proof that it is true. And the proof is only true if it satisfies the verifier. And the verifier is only satisfied if the witness is correct. And the witness is only correct if… And so on. And so on, deep into the depths of mathematical theory.&#x20;
-
-When you realize that math used in cryptography can be thought of in relatively simple terms: as materials, building blocks, and tools. And some materials are chosen because they are very hard while others are chosen because they can be easily constrained, shaped, and manipulated like plastic. And some of these tools provide randomness. And some blocks fit together, while others don’t. Then it all becomes relatively simple to think about and we can see complex technologies like ZK proofs as less mysterious and perhaps even as something we can help shape in our own way.
-
-In this introduction, we have one core aim, to provide enough understanding to be able to meaningfully engage in high level conversation about this technology. We are doing that by demystifying some of the core mathematical components as well as discussing general properties.
