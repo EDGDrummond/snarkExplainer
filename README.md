@@ -6,7 +6,7 @@ description: Ki Chong Tran & Errol Drummond
 
 Is this course for me? \
 \
-This is a really important question to ask yourself before any commitment, regardless of its size. If you intend to do or learn anything related to this technology **and are not sure where to start,** then then this course will be helpful to you. Most people, regardless of background, should be able to follow all the concepts presented here.&#x20;
+This is a really important question to ask yourself before any commitment, regardless of its size. If you intend to do or learn anything related to this technology **and are not sure where to start,** then this course will be helpful to you. Most people, regardless of background, should be able to follow all the concepts presented here.&#x20;
 
 In this adventure we will look at the defining characteristics of zkSNARK technology, a peak at some of the mathematics underlying it, and then a brief overview of some of the systems out there.
 
