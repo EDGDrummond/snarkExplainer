@@ -62,7 +62,7 @@ With EC introduced, we can move onto one of the most important ideas in all of c
 
 When we have an EC point $$G$$, and we are given some other EC point $$P=nG$$ (so $$P$$ is just $$G$$ added to itself $$n$$ times), we refer to the problem of identifying $$n$$ as the <mark style="color:purple;">**discrete logarithm problem**</mark> (<mark style="color:purple;">**DLOG**</mark>).
 
-Of primary importance is an assumption, called the <mark style="color:purple;">**DLOG assumption**</mark>, that this problem is hard. Really hard. So hard in fact that there is no way to solve the problem, except via brute force methods. And if we ensure that we work with large enough values, it is safe to assume that nobody can ever work out what $$n$$ is for a given \$$P4 since it would take the world’s best supercomputers millions of years to solve.
+Of primary importance is an assumption, called the <mark style="color:purple;">**DLOG assumption**</mark>, that this problem is hard. Really hard. So hard in fact that there is no way to solve the problem, except via brute force methods. And if we ensure that we work with large enough values, it is safe to assume that nobody can ever work out what $$n$$ is for a given $$P$$ since it would take the world’s best supercomputers millions of years to solve.
 
 Interestingly, there is no formal proof that this problem is hard. We assume it is hard because we have been trying for hundreds of years, and nobody has found a way to solve the problem more quickly than brute force.
 
