@@ -10,7 +10,7 @@ That is the final piece of the puzzle for the most important component of zkSNAR
 
 So far we have been evaluating our polynomials of interest at values from fields, such as $$\mathbb{F}_q$$, but that doesn't have to be the case. We could evaluate our polynomials at values from a group too, like an elliptic curve (EC) group.
 
-If our polynomial is $$f(x)=x^2+3x+5$$, then instead of getting out numbers, like $$f(2)=2^2+3*2+5=4+6+5=15$$, we will get out a point on an EC. For example if $$G$$ is our base point on the EC, we have that $$f(2)=2^2G+3*2G+5G=15G$$.
+If our polynomial is $$f(x)=x^2+3x+5$$, then instead of putting in numbers and getting out numbers, like $$f(2)=2^2+3*2+5=4+6+5=15$$, we will put in a number and get out an elliptic curve point. For example if $$G$$ is our base point on the EC, we have that $$f(2)=2^2G+3*2G+5G=15G$$.
 
 You may notice that the evaluation of the above 2 look identical, except that the second one has a $$G$$ at the end. The $$G$$ is very useful because it lets us evaluate polynomials at points of unknown order! What does that mean? Let’s explore.
 
